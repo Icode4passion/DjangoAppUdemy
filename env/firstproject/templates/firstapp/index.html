@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Level 2</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+	<script type="text/javascript" src = {% static "script/script.js" %}></script>
+<body>
+	<div>
+		<h3>This is Index HTML  </h3>
+		{{ insert_me }}
+	</div>
+		
+	<dir>
+		<h3>Angelina Jolie </h3>
+		<img src= "{% static "img/test.jpg" %}" alt="Oh she is not there Someting went wrong">
+	</dir>
+
+	<div>
+		<script type="text/javascript"></script>
+	</div>
+
+	<div>
+		<h1>Welcome to level 2</h1>
+		<h2>Access Records</h2>
+		<div class="djangotwo">
+			{% if access_records %}
+				<table>
+					<thead>
+						<th>Site Name</th>
+						<th>
+							Date Accessed
+						</th>
+						
+					</thead>
+
+					{% for acc in access_records %}
+					<tr>
+						<td>{{ acc.name }}</td>
+						<td>{{ acc.date }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+
+				{% else %}
+				<p>NO ACCESS Records !!!!!!</p>
+
+			{% endif %}
+			
+		</div>
+			}
+	</div>
+</body>
+</html>
